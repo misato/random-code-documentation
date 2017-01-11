@@ -59,7 +59,7 @@ Open your `Info.plist` file and insert the folowing keys:
 
 >For the `Privacy - Photo Library Usage Description` the key is `NSPhotoLibraryUsageDescription`
 >
->For the `URL Types+` the key is `CFBundleURLTypes`. 
+>For the `URL Types` the key is `CFBundleURLTypes`. 
 
 It is faster to copy paste the above keys than search for them in the dropdown menu.
 

@@ -1,7 +1,7 @@
 site_name: Random Code Documentation
 pages:
   - Home: index.md
-  - Facebook Swift: facebook-swift.md
+  - Facebook Swift SDK: facebook-swift.md
   - UIView+Layout.swift: uiview_extensions.md
 
 theme: readthedocs
