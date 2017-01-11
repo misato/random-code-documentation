@@ -1,10 +1,11 @@
 #Installing Facebook Swift SDK
 
-## Install the pods (Cocoapods)[^1]
+## Install the SDK
 
-Add this lines to your pod files:
+If you don't use Cocoapods then just download the SDK and set it up in your project as with any other framework.
 
-[^1]: If you don't use Cocoapods then just download the SDK and set it up in your project as with any other framework.
+
+If you use **Cocoapods** add this lines to your pod files:
  
 
 ```ruby
@@ -16,7 +17,7 @@ pod 'FacebookShare'
 
 ```
 
-> Use the pods that you need in your project. No need to put the three of them.
+> Use the pods that you need in your project. It is not a must to put the three of them.
 
 [Oficial Documentation](https://developers.facebook.com/docs/swift/getting-started)
 
@@ -69,21 +70,23 @@ You only need the `Privacy - Photo Library Usage Description` setting if you are
 Add these code in the `AppDelegate.swift`:
 
 ```swift
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-   		// Override point for customization after application launch.
-   	  	// Your other code goes here
-        
-     	// Facebook SDK
-      	SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-   		return true
-   	}
-
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return SDKApplicationDelegate.shared.application(app, open: url, options: options)
     }
 ```
 
+In some part of the documentation it is said that you also need to implement this:
+
+```swift
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+   	  	// Your other code goes here        
+      	SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+   		return true
+   	}
+```
+
+**Don't do it**. There is a bug and the app crashes if you do.
 
 ## Try Login with facebook 
 
@@ -104,4 +107,20 @@ If everything is fine you should see the login button, and it will bring you thr
 
 
 
+## Known bugs
 
+### AccesToken and the simulator
+
+You can check if a user is logged in by doing
+
+```swift
+if let accessToken = AccessToken.current {
+	// The user is logged in do your stuff	
+}
+```
+
+Right now there is a known bug with storing that `AccessToken` that gives this error in the simulator (and doesn't store the token):
+
+```
+Falling back to loading access token from NSUserDefaults because of simulator bug
+```
