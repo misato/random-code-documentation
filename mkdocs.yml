@@ -3,5 +3,6 @@ pages:
   - Home: index.md
   - Facebook Swift SDK: facebook-swift.md
   - UIView+Layout.swift: uiview_extensions.md
+  - Git Utils: git-utils.md
 
 theme: readthedocs
