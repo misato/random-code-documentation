@@ -1,5 +1,3 @@
-#UIView Layout extensions
-
 Here is a UIView extension to handle layout stuff programatically (fill in superview, center in view, etc)
 
 ```swift

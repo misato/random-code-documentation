@@ -1,5 +1,3 @@
-#Installing Facebook Swift SDK
-
 ## Install the SDK
 
 If you don't use Cocoapods then just download the SDK and set it up in your project as with any other framework.
