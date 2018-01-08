@@ -30,8 +30,10 @@ To use git autocomplete and have a better terminal **in macOS** do the following
 
 In the terminal do: 
 ```
-brew install bash-git-prompt bash-completion
+brew install bash-git-prompt
 ```
+
+Also download [this file from here](https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash) and put it in your `/usr/local/share/` folder.
 
 This will install autocomplete for git branches, files, etc and also a better git representation (like the name of the branch in the prompt).
 
